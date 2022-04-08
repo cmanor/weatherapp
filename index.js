@@ -48,18 +48,18 @@ const t = date.toLocaleTimeString();
       };
       //sets up search function
       const search = () => 
-      zipData(document.querySelector(".search-bar").value);
+      zipData(document.querySelector(".searchbar").value);
 //makes the search button clickable
   document.querySelector(".search button").addEventListener("click", function () {
     search();
   });
 //sets up the enter key to also trigger the search function
   document
-    .querySelector(".search-bar")
+    .querySelector(".searchbar")
     .addEventListener("keyup", function (event) {
       if (event.key == "Enter") {
         search();
-
+        document.querySelector(".searchbar").value = null;
       }
     });
 // autoloads charlottes zip so I can check if my changes work
