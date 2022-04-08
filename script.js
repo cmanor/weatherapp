@@ -50,5 +50,3 @@ let weather = {
         weather.search();
       }
     });
-  
-//   weather.fetchWeather("seattle");
