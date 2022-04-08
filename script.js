@@ -25,12 +25,16 @@ const d = date.toDateString();
 
 // get the time as a string
 const t = date.toLocaleTimeString();
+
 //function for displaying weather data
+
+//sets constants using deconstruction
       const displayWeather = function (data) {
         const {name} = data;
         const {icon, description} = data.weather[0];
         const {temp, humidity, temp_min, temp_max, feels_like} = data.main;
         const {speed} = data.wind;
+//changes the html with the results I want
         document.querySelector(".min").innerHTML ="Low: " + temp_min;
         document.querySelector(".max").innerHTML ="High: " + temp_max;
         document.querySelector(".city").innerText = name;
@@ -58,7 +62,8 @@ const t = date.toLocaleTimeString();
     .addEventListener("keyup", function (event) {
       if (event.key == "Enter") {
         search();
+
       }
     });
-
+// autoloads charlottes zip
     zipData("28205");
