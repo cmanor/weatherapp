@@ -15,6 +15,16 @@
               //send data into the display weather function
               .then(data => displayWeather(data))
       };
+
+      // program to display the date
+// get local machine date time
+const date = new Date();
+
+// get the date as a string
+const d = date.toDateString();
+
+// get the time as a string
+const t = date.toLocaleTimeString();
 //function for displaying weather data
       const displayWeather = function (data) {
         const {name} = data;
@@ -24,14 +34,16 @@
         document.querySelector(".min").innerHTML ="Low: " + temp_min;
         document.querySelector(".max").innerHTML ="High: " + temp_max;
         document.querySelector(".city").innerText = name;
+        document.querySelector(".description").innerText ="Conditions: " + description;
         document.querySelector(".icon").src =
           "https://openweathermap.org/img/wn/" + icon + ".png";
-        document.querySelector(".description").innerText = description;
         document.querySelector(".temp").innerText = temp + "°F";
         document.querySelector(".humidity").innerText =
           "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
           "Wind speed: " + speed + " km/h";
+        document.querySelector('.date').innerHTML = d;
+        document.querySelector('.time').innerHTML = t;
       };
       const search = function () {
         zipData(document.querySelector(".search-bar").value);
