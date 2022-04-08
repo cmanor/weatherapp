@@ -35,28 +35,25 @@ const t = date.toLocaleTimeString();
         const {temp, humidity, temp_min, temp_max, feels_like} = data.main;
         const {speed} = data.wind;
 //changes the html with the results I want
-        document.querySelector(".min").innerHTML ="Low: " + temp_min;
-        document.querySelector(".max").innerHTML ="High: " + temp_max;
+        document.querySelector(".min").innerHTML =`Low: ${temp_min}`;
+        document.querySelector(".max").innerHTML =`High: ${temp_max}`;
         document.querySelector(".city").innerText = name;
-        document.querySelector(".description").innerText ="Conditions: " + description;
-        document.querySelector(".icon").src =
-          "https://openweathermap.org/img/wn/" + icon + ".png";
+        document.querySelector(".description").innerText =`Conditions: ${description}`;
+        document.querySelector(".icon").src =`https://openweathermap.org/img/wn/${icon}.png`;
         document.querySelector(".temp").innerText = temp + "°F";
-        document.querySelector(".humidity").innerText =
-          "Humidity: " + humidity + "%";
-        document.querySelector(".wind").innerText =
-          "Wind speed: " + speed + " km/h";
+        document.querySelector(".humidity").innerText =`Humidity: ${humidity} %`;
+        document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
         document.querySelector('.date').innerHTML = d;
         document.querySelector('.time').innerHTML = t;
       };
-      const search = function () {
-        zipData(document.querySelector(".search-bar").value);
-      };
-
+      //sets up search function
+      const search = () => 
+      zipData(document.querySelector(".search-bar").value);
+//makes the search button clickable
   document.querySelector(".search button").addEventListener("click", function () {
     search();
   });
-  
+//sets up the enter key to also trigger the search function
   document
     .querySelector(".search-bar")
     .addEventListener("keyup", function (event) {
@@ -65,5 +62,5 @@ const t = date.toLocaleTimeString();
 
       }
     });
-// autoloads charlottes zip
+// autoloads charlottes zip so I can check if my changes work
     zipData("28205");
