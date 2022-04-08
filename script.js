@@ -21,6 +21,8 @@
         const {icon, description} = data.weather[0];
         const {temp, humidity, temp_min, temp_max, feels_like} = data.main;
         const {speed} = data.wind;
+        document.querySelector(".min").innerHTML ="Low: " + temp_min;
+        document.querySelector(".max").innerHTML ="High: " + temp_max;
         document.querySelector(".city").innerText = name;
         document.querySelector(".icon").src =
           "https://openweathermap.org/img/wn/" + icon + ".png";
@@ -30,7 +32,6 @@
           "Humidity: " + humidity + "%";
         document.querySelector(".wind").innerText =
           "Wind speed: " + speed + " km/h";
-        document.querySelector(".weather").classList.remove("loading");
       };
       const search = function () {
         zipData(document.querySelector(".search-bar").value);
