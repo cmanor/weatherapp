@@ -5,7 +5,7 @@ body {
   height: 100vh;
   margin: 0;
   font-size: 120%;
-  background-color: slateblue;
+  background: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c);
 }
 
 .card {
@@ -13,8 +13,9 @@ body {
   color: white;
   padding: 2em;
   width: 100%;
-  max-width: 420px;
+  max-width: 500px;
   margin: 1em;
+  border-radius: 11%;
 }
 
 .search {
