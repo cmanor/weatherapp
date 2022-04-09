@@ -54,9 +54,7 @@ const t = date.toLocaleTimeString();
     search();
   });
 //sets up the enter key to also trigger the search function
-  document
-    .querySelector(".searchbar")
-    .addEventListener("keyup", function (event) {
+  document.querySelector(".searchbar").addEventListener("keyup", function (event) {
       if (event.key == "Enter") {
         search();
         document.querySelector(".searchbar").value = null;
