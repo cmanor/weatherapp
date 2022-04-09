@@ -1,5 +1,5 @@
     const apiKey= "856cf893bf4748da5e5e119d50885a54";
-    const dq = (dataPoint) => document.querySelector(dataPoint)
+    
     //getting zipcode data b/c I need to send lon and lat to another api
     const zipData = (zip) => 
         fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${apiKey}`)
@@ -27,7 +27,7 @@ const d = date.toDateString();
 const t = date.toLocaleTimeString();
 
 //function for displaying weather data
-
+const dq = (dataPoint) => document.querySelector(dataPoint)
 //sets constants using deconstruction
       const displayWeather = (data) => {
         const {name} = data;
@@ -36,6 +36,7 @@ const t = date.toLocaleTimeString();
         const {speed} = data.wind;
 //changes the html with the results I want
 
+const dq = (dataPoint) => document.querySelector(dataPoint)
 //remember 'dq' is short for document.queryselector
         dq(".min").innerHTML =`Low: ${temp_min}`;
         dq(".max").innerHTML =`High: ${temp_max}`;
@@ -57,7 +58,6 @@ const t = date.toLocaleTimeString();
   dq(".searchbar").addEventListener("keyup", (e) => {
       if (e.key == "Enter") {
         search();
-        dq(".searchbar").value = null;
       }
     });
 // autoloads charlottes zip so I can check if my changes work
