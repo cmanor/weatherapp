@@ -1,7 +1,7 @@
     const apiKey= "856cf893bf4748da5e5e119d50885a54";
     //getting zipcode data b/c I need to send lon and lat to another api
     const zipData = function (zip) {
-        fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${apiKey}`)
+        fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zip},US&appid=${apiKey}`)
           .then((response) => 
               response.json())
               //sends data to next api request
@@ -40,7 +40,7 @@ const t = date.toLocaleTimeString();
         document.querySelector(".city").innerText = name;
         document.querySelector(".description").innerText =`Conditions: ${description}`;
         document.querySelector(".icon").src =`https://openweathermap.org/img/wn/${icon}.png`;
-        document.querySelector(".temp").innerText = temp + "°F";
+        document.querySelector(".temp").innerText =`${temp}°F`;
         document.querySelector(".humidity").innerText =`Humidity: ${humidity} %`;
         document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
         document.querySelector('.date').innerHTML = d;
