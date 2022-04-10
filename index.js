@@ -36,7 +36,6 @@ const dq = (dataPoint) => document.querySelector(dataPoint)
         const {speed} = data.wind;
 //changes the html with the results I want
 
-const dq = (dataPoint) => document.querySelector(dataPoint)
 //remember 'dq' is short for document.queryselector
         dq(".min").innerHTML =`Low: ${temp_min}`;
         dq(".max").innerHTML =`High: ${temp_max}`;
