@@ -10,11 +10,11 @@ const zipData = (zip) =>
       .then((res) => 
           res.json())
           //sends data to next api request
-        .then((data) => lonlat(data));
+        .then((data) => geoLocData(data));
 
 //sends lon and lat to 2nd API that has weather data
-  const lonlat = (deez) => 
-    fetch(`${api.base}data/2.5/weather?lat=${deez.lat}&lon=${deez.lon}&units=imperial&appid=${api.key}`)
+  const geoLocData = (geoLoc) => 
+    fetch(`${api.base}data/2.5/weather?lat=${geoLoc.lat}&lon=${geoLoc.lon}&units=imperial&appid=${api.key}`)
       .then((res) => 
           res.json())
           //send data into the display weather function
