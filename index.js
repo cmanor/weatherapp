@@ -40,16 +40,16 @@ const date = new Date();
     const {temp, humidity, temp_min, temp_max, feels_like} = data.main;
     const {speed} = data.wind;
 //changes the html with the results I want
-    document.querySelector(".min").innerHTML =`Low: ${temp_min}`;
-    document.querySelector(".max").innerHTML =`High: ${temp_max}`;
+    document.querySelector(".min").innerText =`Low: ${temp_min}`;
+    document.querySelector(".max").innerText =`High: ${temp_max}`;
     document.querySelector(".city").innerText = name;
     document.querySelector(".description").innerText =`Conditions: ${description}`;
-    document.querySelector(".icon").src =`https://openweathermap.org/img/wn/${icon}.png`;
+    document.querySelector(".icon").innerText =`https://openweathermap.org/img/wn/${icon}.png`;
     document.querySelector(".temp").innerText =`${temp}°F`;
     document.querySelector(".humidity").innerText =`Humidity: ${humidity} %`;
     document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
-    document.querySelector('.date').innerHTML = date.toDateString();
-    document.querySelector('.time').innerHTML = date.toLocaleTimeString();
+    document.querySelector('.date').innerText = date.toDateString();
+    document.querySelector('.time').innerText = date.toLocaleTimeString();
   };
   //sets up search function
   const search = () =>
