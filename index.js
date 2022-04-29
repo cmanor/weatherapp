@@ -39,17 +39,21 @@ const date = new Date();
     const {icon, description} = data.weather[0];
     const {temp, humidity, temp_min, temp_max, feels_like} = data.main;
     const {speed} = data.wind;
+    //added a function to simplify adding content
+    const setText = (query, content) => document.querySelector(query).innerText = content;
+    setText(".min", `Low: ${temp_min}`);
 //changes the html with the results I want
-    document.querySelector(".min").innerText =`Low: ${temp_min}`;
-    document.querySelector(".max").innerText =`High: ${temp_max}`;
-    document.querySelector(".city").innerText = name;
-    document.querySelector(".description").innerText =`Conditions: ${description}`;
-    document.querySelector(".icon").innerText =`https://openweathermap.org/img/wn/${icon}.png`;
-    document.querySelector(".temp").innerText =`${temp}°F`;
-    document.querySelector(".humidity").innerText =`Humidity: ${humidity} %`;
-    document.querySelector(".wind").innerText = `Wind speed: ${speed} km/h`;
-    document.querySelector('.date').innerText = date.toDateString();
-    document.querySelector('.time').innerText = date.toLocaleTimeString();
+//put them in the order they appear in the app
+    setText(".city", name);
+    setText(".temp", `${temp}°F`);
+    document.querySelector(".icon").src =`https://openweathermap.org/img/wn/${icon}.png`;
+    setText(".description", `Conditions: ${description}`);
+    setText(".humidity", `Humidity: ${humidity} %`);
+    setText(".wind", `Wind speed: ${speed} km/h`);
+    setText(".min", `Low: ${temp_min}`);
+    setText(".max", `High: ${temp_max}`);
+    setText(".date", date.toDateString());
+    setText(".time", date.toLocaleTimeString());
   };
   //sets up search function
   const search = () =>
@@ -64,4 +68,4 @@ document.querySelector(".searchbar").addEventListener("keyup", (e) => {
 });
 //got rid of this because it's not needed in the final version
 // autoloads charlottes zip so I can check if my changes work
-// zipData("28205");
+zipData("28205");
